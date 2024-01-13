@@ -1,0 +1,134 @@
+nohup: ignoring input
+01/08/2024 16:14:22 - INFO - __main__ - Distributed environment: DistributedType.MULTI_GPU  Backend: nccl
+Num processes: 2
+Process index: 0
+Local process index: 0
+Device: cuda:0
+
+Mixed precision type: fp16
+
+01/08/2024 16:14:22 - INFO - __main__ - Distributed environment: DistributedType.MULTI_GPU  Backend: nccl
+Num processes: 2
+Process index: 1
+Local process index: 1
+Device: cuda:1
+
+Mixed precision type: fp16
+
+You are using a model of type clip_text_model to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+You are using a model of type clip_text_model to instantiate a model of type . This is not supported for all configurations of models and can yield errors.
+{'variance_type', 'thresholding', 'clip_sample_range', 'rescale_betas_zero_snr', 'dynamic_thresholding_ratio'} was not found in config. Values will be initialized to default values.
+{'reverse_transformer_layers_per_block', 'dropout', 'attention_type'} was not found in config. Values will be initialized to default values.
+wandb: Currently logged in as: ruggsea. Use `wandb login --relogin` to force relogin
+Traceback (most recent call last):
+  File "/home/rlazzaroni/lora_roman_mosaics/diffusers/examples/dreambooth/train_dreambooth_lora_sdxl.py", line 1724, in <module>
+    main(args)
+  File "/home/rlazzaroni/lora_roman_mosaics/diffusers/examples/dreambooth/train_dreambooth_lora_sdxl.py", line 1427, in main
+    model_pred = unet(
+                 ^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1519, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1355, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/accelerate/utils/operations.py", line 680, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/accelerate/utils/operations.py", line 668, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/diffusers/models/unet_2d_condition.py", line 1177, in forward
+    sample = upsample_block(
+             ^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/diffusers/models/unet_2d_blocks.py", line 2354, in forward
+    hidden_states = attn(
+                    ^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/diffusers/models/transformer_2d.py", line 392, in forward
+    hidden_states = block(
+                    ^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/diffusers/models/attention.py", line 329, in forward
+    attn_output = self.attn1(
+                  ^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/diffusers/models/attention_processor.py", line 527, in forward
+    return self.processor(
+           ^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/diffusers/models/attention_processor.py", line 1259, in __call__
+    hidden_states = F.scaled_dot_product_attention(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 1 has a total capacty of 10.75 GiB of which 16.50 MiB is free. Including non-PyTorch memory, this process has 10.73 GiB memory in use. Of the allocated memory 10.14 GiB is allocated by PyTorch, and 239.51 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[2024-01-08 16:14:43,286] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 115347 closing signal SIGTERM
+[2024-01-08 16:14:43,701] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 1 (pid: 115348) of binary: /home/rlazzaroni/anaconda3/bin/python
+Traceback (most recent call last):
+  File "/home/rlazzaroni/anaconda3/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1008, in launch_command
+    multi_gpu_launcher(args)
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/accelerate/commands/launch.py", line 666, in multi_gpu_launcher
+    distrib_run.run(args)
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rlazzaroni/anaconda3/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+diffusers/examples/dreambooth/train_dreambooth_lora_sdxl.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-01-08_16:14:43
+  host      : cssh-epsilon
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 115348)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+./training.sh: 23: --gradient_checkpointing: not found

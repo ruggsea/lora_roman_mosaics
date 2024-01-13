@@ -1,0 +1,5 @@
+[default]
+entity = ruggsea
+project = lora_roman_mosaics
+base_url = https://api.wandb.ai
+
