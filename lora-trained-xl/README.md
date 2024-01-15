@@ -1,4 +1,3 @@
-
 ---
 tags:
 - stable-diffusion-xl
@@ -9,31 +8,28 @@ tags:
 - template:sd-lora
 
 base_model: stabilityai/stable-diffusion-xl-base-1.0
-instance_prompt: a photo of rmos mosaic
+instance_prompt: a photo of Roman mosaic
 license: openrail++
 ---
-    
+
 # SDXL LoRA DreamBooth - ruggsea/lora-trained-xl
 
 <Gallery />
 
 ## Model description
 
-These are ruggsea/lora-trained-xl LoRA adaption weights for stabilityai/stable-diffusion-xl-base-1.0.
+These are the LoRA adaptation weights for stabilityai/stable-diffusion-xl-base-1.0, trained by ruggsea/lora-trained-xl.
 
-The weights were trained  using [DreamBooth](https://dreambooth.github.io/).
+The weights were trained using the SDXL Lora Dreambooth training script from the Diffusers library. The training parameters and other details can be found in [this](https://github.com/ruggsea/lora_roman_mosaics) repo.
 
-LoRA for the text encoder was enabled: False.
+LoRA for the text encoder was not enabled.
 
-Special VAE used for training: madebyollin/sdxl-vae-fp16-fix.
+A special VAE, madebyollin/sdxl-vae-fp16-fix, was used for training.
 
 ## Trigger words
 
-You should use a photo of rmos mosaic to trigger the image generation.
+To generate images, use a photo of a Roman mosaic as the trigger.
 
 ## Download model
 
-Weights for this model are available in Safetensors format.
-
-[Download](ruggsea/lora-trained-xl/tree/main) them in the Files & versions tab.
-
+The weights for this model are available in Safetensors format. You can download them from the [Files & versions tab](ruggsea/lora-trained-xl/tree/main).
