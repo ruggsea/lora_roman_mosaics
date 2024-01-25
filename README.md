@@ -1,5 +1,3 @@
-Attempt of training a SDXL lora on a dataset of Roman mosaics images, mostly taken from the Museo Nazionale Romano - Palazzo Massimo in Rome
-
 # Lora Roman Mosaics
 
 This repository contains code and data used to train a Lora (Low-Rank Adaptation, an efficient finetuning approach for large Diffusion models) on a dataset of Roman mosaics images. The majority of the images were sourced from the Museo Nazionale Romano - Palazzo Massimo in Rome, some of them are my own photos.
